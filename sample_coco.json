@@ -1,0 +1,92 @@
+{
+    "info": {
+        "description": "COCO sample Dataset",
+        "url": "https://github.com/rndazurescript/Coco2CustomVision",
+        "version": "1.0",
+        "year": 2021,
+        "contributor": "RnD Azure Script",
+        "date_created": "2021/06/2"
+    },
+    "licenses": [
+        {
+            "url": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+            "id": 1,
+            "name": "Attribution-NonCommercial-ShareAlike License"
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Tag 1",
+            "supercategory": "Root"
+        },
+        {
+            "id": 2,
+            "name": "Tag 2",
+            "supercategory": "Root"
+        }
+    ],
+    "images": [
+        {
+            "id": 1,
+            "width": 1920,
+            "height": 1080,
+            "file_name": "000000000001.jpg",
+            "license": 1,
+            "coco_url": "https://account_name.blob.core.windows.net/container_name/folder_name/000000000001.jpg"
+        }
+    ],
+    "annotations": [
+        {
+            "id": 1,
+            "image_id": 1,
+            "category_id": 1,
+            "iscrowd": 0,
+            "bbox": [
+                195.50913838120104,
+                200.56993817619784,
+                797.0757180156658,
+                156.0741885625966
+            ],
+            "area": 124402.94,
+            "segmentation": [
+                [
+                    210.54830287206266,
+                    213.08925811437402,
+                    487.9373368146214,
+                    207.2469088098918,
+                    264.8357805255023,
+                    195.50913838120104,
+                    243.1356259659969
+                ]
+            ]
+        },
+        {
+            "id": 2,
+            "image_id": 1,
+            "category_id": 2,
+            "is_crowd": 0,
+            "bbox": [
+                904.0208877284595,
+                147.98879443585778,
+                702.66318537859,
+                155.23956723338483
+            ],
+            "area": 109081.128,
+            "segmentation": [
+                [
+                    904.0208877284595,
+                    168.85432766615145,
+                    1249.9216710182766,
+                    151.32727975270478,
+                    1440.4177545691905,
+                    147.98879443585778,
+                    1073.6292428198433,
+                    284.8666924265842,
+                    926.579634464752,
+                    207.2469088098918
+                ]
+            ]
+        }
+    ]
+}

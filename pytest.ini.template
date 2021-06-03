@@ -1,0 +1,7 @@
+[pytest]
+env = 
+    D:CUSTOM_VISION_KEY=
+    D:CUSTOM_VISION_ENDPOINT=https://westeurope.api.cognitive.microsoft.com/
+    D:STORAGE_ACCOUNT_KEY=
+    D:STORAGE_ACCOUNT_NAME=
+    D:STORAGE_ACCOUNT_CONTAINER_NAME=testcontainer
