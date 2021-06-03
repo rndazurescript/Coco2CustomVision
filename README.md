@@ -5,6 +5,35 @@ Currently the scripts work with Object Detection but can be easily updated to wo
 
 ## Installation
 
+Install from pip
+
+```
+pip install coco2customvision
+```
+
+## Usage
+
+To export a custom vision project to an Azure storage account use the following:
+```
+coco2customvision export -sk "<storage_account_key>" -sn <storage_account_name> -sc <storage_account_container_name> -cvk <custom_vision_key> -cve <custom_vision_endpoint> -cvp <custom_vision_project_name> coco_dataset_filename.json
+```
+
+To import a coco dataset that is located in an Azure storage account container into a custom vision project (the project may not exist yet):
+```
+coco2customvision import -sk "<storage_account_key>" -sn <storage_account_name> -sc <storage_account_container_name> -cvk <custom_vision_key> -cve <custom_vision_endpoint> -cvp <custom_vision_project_name> coco_dataset_filename.json
+```
+
+You can get the parameters from:
+- [Custom vision](https://www.customvision.ai/projects#/settings): custom_vision_key, custom_vision_endpoint, custom_vision_project_name
+- [Azure portal](https://portal.azure.com/): storage_account_key, storage_account_name, storage_account_container_name
+
+
+## Code development
+
+If you want to contribute to this code base, clone the repo and follow these instructions.
+
+### Development installation
+
 Install all dependencies using:
 
 ```
@@ -18,7 +47,7 @@ To run all tests:
 python -m pytest . -c pytest.ini
 ```
 
-## Usage
+### Invoking the dev code from command line
 
 To export a custom vision project to an Azure storage account use the following:
 ```
@@ -30,11 +59,7 @@ To import a coco dataset that is located in an Azure storage account container i
 python -m coco2customvision import -sk "<storage_account_key>" -sn <storage_account_name> -sc <storage_account_container_name> -cvk <custom_vision_key> -cve <custom_vision_endpoint> -cvp <custom_vision_project_name> coco_dataset_filename.json
 ```
 
-You can get the parameters from:
-- [Custom vision](https://www.customvision.ai/projects#/settings): custom_vision_key, custom_vision_endpoint, custom_vision_project_name
-- [Azure portal](https://portal.azure.com/): storage_account_key, storage_account_name, storage_account_container_name
-
-## Code development
+### Code quality practises
 
 Before making any commit:
 
@@ -46,9 +71,13 @@ Before making any commit:
   ```
   python -m flake8 .
   ```
-- Ensure all test pass
+- Ensure all test pass:
   ```
   python -m pytest . -c pytest.ini
+  ```
+- Ensure `setup.cfg` file is [consistently formatted](https://github.com/asottile/setup-cfg-fmt):
+  ```
+  setup-cfg-fmt setup.cfg
   ```
 
 ## References
@@ -65,3 +94,4 @@ Here is a list of related projects and references to this effort:
 List of Python related refences:
 - [Fixtures in pytest](https://docs.pytest.org/en/latest/how-to/fixtures.html)
 - [Click arguments parser](https://click.palletsprojects.com/)
+- [Packaging projects](https://packaging.python.org/tutorials/packaging-projects/)

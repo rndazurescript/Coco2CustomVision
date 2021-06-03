@@ -1,0 +1,27 @@
+[build-system]
+requires = [
+    "setuptools>=42", 
+    "wheel", 
+    "setuptools_scm[toml]>=6",
+    "pip>=21.1.2"
+]
+build-backend = "setuptools.build_meta"
+
+[dependencies]
+azure-cognitiveservices-vision-customvision="^3.1"
+azure.storage.blob="^12.8"
+click="^8"
+tqdm="^4.61"
+
+[dev-dependencies]
+setuptools_scm="^6"
+black="^21"
+pytest="^6.2"
+pytest-env="^0.6"
+flake8="^3.9"
+setup-cfg-fmt="^1.17"
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+write_to = "coco2customvision/_dist_ver.py"
+write_to_template = "__version__ = '{version}'\n"

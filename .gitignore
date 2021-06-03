@@ -350,3 +350,7 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 pytest.ini
+coco2customvision/_dist_ver.py
+coco2customvision.egg-info
+dist
+build

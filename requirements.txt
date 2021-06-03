@@ -1,10 +1,11 @@
-azure-cognitiveservices-vision-customvision==3.1
-setuptools_scm
-azure.storage.blob
-click
-tqdm
-
-black
-pytest
-pytest-env
-flake8
+azure-cognitiveservices-vision-customvision>=3.1
+azure.storage.blob>=12.8
+click>=8
+tqdm>=4.61
+# Dev dependencies
+setuptools_scm>=6
+black>=21
+pytest>=6.2
+pytest-env>=0.6
+flake8>=3.9
+setup-cfg-fmt>=1.17
