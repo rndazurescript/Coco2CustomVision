@@ -22,6 +22,5 @@ flake8="^3.9"
 setup-cfg-fmt="^1.17"
 
 [tool.setuptools_scm]
-version_scheme = "post-release"
 write_to = "coco2customvision/_dist_ver.py"
 write_to_template = "__version__ = '{version}'\n"
