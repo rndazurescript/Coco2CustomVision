@@ -1,11 +1,11 @@
-# Coco2CustomVision
+# Coco to Custom Vision (in Azure)
 A simple utility to upload a [COCO dataset](https://cocodataset.org/) format to custom vision and vice versa. This can be used to backup your custom vision object detection projects into a storage account and restore it later or use AzureML to create a more custom CV model.
 
 Currently the scripts work with Object Detection but can be easily updated to work with Classification. 
 
 ## Installation
 
-Install from pip
+Install from pip (when it gets published, work in progress)
 
 ```
 pip install coco2customvision
