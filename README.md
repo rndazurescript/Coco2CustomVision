@@ -15,9 +15,7 @@ Install all dependencies using:
 pip install -r requirements.txt
 ```
 
-For tests to complete, add the following environment variables that you can get from https://www.customvision.ai/projects#/settings:
-- CUSTOM_VISION_KEY
-- CUSTOM_VISION_ENDPOINT
+For tests to complete, you can create a `pytest.ini` file from the `pytest.ini.template` one filling in all secrets to your [Custom vision](https://www.customvision.ai/projects#/settings) and [Azure storage account](https://portal.azure.com/). This file is `.gitignored` to avoid pushing credentials accidentally.
 
 ## Usage
 
@@ -25,6 +23,12 @@ To export a custom vision project to an Azure storage account use the following:
 ```
 python -m coco2customvision export -sk "<storage_account_key>" -sn <storage_account_name> -sc <storage_account_container_name> -cvk <custom_vision_key> -cve <custom_vision_endpoint> -cvp <custom_vision_project_name> coco_dataset_filename.json
 ```
+
+To import a coco dataset that is located in an Azure storage account container into a custom vision project (the project may not exist yet):
+```
+python -m coco2customvision import -sk "<storage_account_key>" -sn <storage_account_name> -sc <storage_account_container_name> -cvk <custom_vision_key> -cve <custom_vision_endpoint> -cvp <custom_vision_project_name> coco_dataset_filename.json
+```
+
 You can get the parameters from:
 - [Custom vision](https://www.customvision.ai/projects#/settings): custom_vision_key, custom_vision_endpoint, custom_vision_project_name
 - [Azure portal](https://portal.azure.com/): storage_account_key, storage_account_name, storage_account_container_name
