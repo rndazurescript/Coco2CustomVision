@@ -1,11 +1,7 @@
 # Coco2CustomVision
-A simple script to upload a [COCO dataset](https://cocodataset.org/) format to custom vision and vice versa.
+A simple utility to upload a [COCO dataset](https://cocodataset.org/) format to custom vision and vice versa. This can be used to backup your custom vision object detection projects into a storage account and restore it later or use AzureML to create a more custom CV model.
 
 Currently the scripts work with Object Detection but can be easily updated to work with Classification. 
-
-## Accessing files in blob storage
-
-
 
 ## Installation
 
@@ -15,7 +11,12 @@ Install all dependencies using:
 pip install -r requirements.txt
 ```
 
-For tests to complete, you can create a `pytest.ini` file from the `pytest.ini.template` one filling in all secrets to your [Custom vision](https://www.customvision.ai/projects#/settings) and [Azure storage account](https://portal.azure.com/). This file is `.gitignored` to avoid pushing credentials accidentally.
+For tests to complete, you need to either configure the environment variables defined in  the `pytest.ini.template` file or create a `pytest.ini` file from the template, filling in all secrets to your [Custom vision](https://www.customvision.ai/projects#/settings) and [Azure storage account](https://portal.azure.com/). This file is `.gitignored` to avoid pushing credentials accidentally.
+
+To run all tests:
+```
+python -m pytest . -c pytest.ini
+```
 
 ## Usage
 
@@ -33,6 +34,22 @@ You can get the parameters from:
 - [Custom vision](https://www.customvision.ai/projects#/settings): custom_vision_key, custom_vision_endpoint, custom_vision_project_name
 - [Azure portal](https://portal.azure.com/): storage_account_key, storage_account_name, storage_account_container_name
 
+## Code development
+
+Before making any commit:
+
+- Format the code using `black`:
+  ```
+  python -m black . 
+  ```
+- Ensure that there is no `flake8` error:
+  ```
+  python -m flake8 .
+  ```
+- Ensure all test pass
+  ```
+  python -m pytest . -c pytest.ini
+  ```
 
 ## References
 
