@@ -24,11 +24,11 @@ def test_cat_get_category_id_to_tag_id_dictionary(
 
     assert dictionary is not None, "Failed to retrieve annotations dictionary"
     assert len(dictionary) == 2, "Dictionary doesn't have 2 elements as expected"
-    dictionary_keys = dict.keys()
+    dictionary_keys = list(dictionary.keys())
     assert (
         dictionary_keys[0] == test_tag_1_id and dictionary_keys[1] == test_tag_2_id
     ), "Category keys not found"
     assert (
-        tags_id_dictionary[dictionary[test_tag_1_id]] == test_tag_1_name
-        and tags_id_dictionary[dictionary[test_tag_2_id]] == test_tag_2_name
+        tags_id_dictionary[dictionary[test_tag_1_id]].name == test_tag_1_name
+        and tags_id_dictionary[dictionary[test_tag_2_id]].name == test_tag_2_name
     ), "Category tags are wrong"
