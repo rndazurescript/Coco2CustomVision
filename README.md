@@ -6,7 +6,7 @@ Currently the scripts work with Object Detection but can be easily updated to wo
 
 ## Installation
 
-Install from pip (when it gets published, work in progress)
+Install from pip:
 
 ```bash
 pip install coco2customvision
@@ -99,6 +99,23 @@ Before making any commit you can invoke the `pre-commit.bat` file which does the
   ```bash
   setup-cfg-fmt setup.cfg
   ```
+
+### Publishing to pypi
+
+To create a release you need to create an annotated tag:
+
+```bash
+git tag -a v0.1.0 -m "First version of the tool"
+```
+
+Run a build to create the corresponding version artifacts under the `dist` folder. Then push them to `testpypi` to verify:
+
+```bash
+pip install --upgrade twine
+twine upload --repository testpypi dist/*
+```
+
+Verify results in the [test Pypi](https://test.pypi.org/project/coco2customvision/) instance.
 
 ## References
 
