@@ -60,7 +60,7 @@ or use the [VSCode Test Explorer](https://code.visualstudio.com/docs/python/test
 
 ### [Optional] Invoking the dev code from command line
 
-If you installed the module in develop mode you can use it directly as seen in the instructions above. You can also use the module reference, as seen bellow. 
+If you installed the module in develop mode you can use it directly as seen in the instructions above. You can also use the module reference, as seen bellow.
 
 To export a custom vision project to an Azure storage account use the following:
 
@@ -137,7 +137,13 @@ git tag -d v0.1.0
 
 > Note: You will not be able to push the same version to the test Pypi instance. As a work around you can increase the prerelease 4th digit e.g. 0.1.0.1.
 
-When you are ready push changes to remote and let github actions publish the package to the production Pypi.
+When you are ready push changes to remote and let github actions publish the package to the production Pypi. Just push the tag to GitHub and the CD action will create the release:
+
+```bash
+git push origin --tags
+```
+
+> Note that currently the CD process is kicked when you push the tag and it doesn't do the CI part. So make sure your code is passing the CI part before tagging and pushing the tag to GitHub.
 
 ## References
 
