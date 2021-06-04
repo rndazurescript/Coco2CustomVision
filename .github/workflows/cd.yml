@@ -1,8 +1,10 @@
-name: Publish to Pypi
+name: Create release and publish to Pypi
 
 on:
-  release:
-    types: [published]
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
   deploy:
@@ -10,10 +12,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: robinraju/release-downloader@v1
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
       with:
-        repository: "rndazurescript/Coco2CustomVision"
-        latest: true
-    - name: List artifacts
+        python-version: '3.x'
+    - name: Install dependencies
       run: |
-        ls -la
+        python -m pip install --upgrade pip
+        pip install build
+    - name: Build package
+      run: python -m build
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ./dist/*
+        fail_on_unmatched_files: true
+        draft: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish package
+      uses: pypa/gh-action-pypi-publish@v1.4.2
+      with:
+        user: __token__
+        password: ${{ secrets.PYPI_API_TOKEN }}
