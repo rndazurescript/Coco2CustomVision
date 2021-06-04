@@ -108,6 +108,12 @@ To create a release you need to create an annotated tag:
 git tag -a v0.1.0 -m "First version of the tool"
 ```
 
+You can view existing tags and their comments (`-n`) using:
+
+```bash
+git tag -n
+```
+
 Run a build to create the corresponding version artifacts under the `dist` folder. Then push them to `testpypi` to verify:
 
 ```bash
@@ -115,7 +121,21 @@ pip install --upgrade twine
 twine upload --repository testpypi dist/*
 ```
 
-Verify results in the [test Pypi](https://test.pypi.org/project/coco2customvision/) instance.
+Verify results in the [test Pypi](https://test.pypi.org/project/coco2customvision/) instance. You can try installing in a new python environment using:
+
+```bash
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple coco2customvision
+```
+
+If you decide to make some more changes, you can delete a tag using the following:
+
+```bash
+git tag -d v0.1.0
+```
+
+> Note: You will not be able to push the same version to the test Pypi instance. As a work around you can increase the prerelease 4th digit e.g. 0.1.0.1.
+
+When you are ready push changes to remote and let github actions publish the package to the production Pypi.
 
 ## References
 
