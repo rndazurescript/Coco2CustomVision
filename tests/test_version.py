@@ -17,4 +17,4 @@ def test_version():
         assert 3 <= len(version_parts), "must have at least Major.minor.patch"
         assert all(
             not try_parse_int(i) is None for i in version_parts[:2]
-        ), f"Version Major.minor must be 2 integers. Recieved {__version__}"
+        ), f"Version Major.minor must be 2 integers. Received {__version__}"

@@ -7,20 +7,6 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
-[dependencies]
-azure-cognitiveservices-vision-customvision="^3.1"
-azure.storage.blob="^12.8"
-click="^8"
-tqdm="^4.61"
-
-[dev-dependencies]
-setuptools_scm="^6"
-black="^21"
-pytest="^6.2"
-pytest-env="^0.6"
-flake8="^3.9"
-setup-cfg-fmt="^1.17"
-
 [tool.setuptools_scm]
-write_to = "coco2customvision/_dist_ver.py"
+write_to = "src/coco2customvision/_dist_ver.py"
 write_to_template = "__version__ = '{version}'\n"

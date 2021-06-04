@@ -77,7 +77,7 @@ def add_custom_vision_tagged_images_to_coco(
                 region.width * image.width,
                 region.height * image.height,
             ]
-            # Calculate area as denormalized length*width
+            # Calculate area as de-normalized length*width
             area = region.width * image.width * region.height * image.height
             annotation_data = {
                 "id": max_annotation_id,
