@@ -1,5 +1,8 @@
 # Coco to Custom Vision (in Azure)
 
+[![Build](https://github.com/rndazurescript/Coco2CustomVision/actions/workflows/ci.yml/badge.svg)](https://github.com/rndazurescript/Coco2CustomVision/actions/workflows/ci.yml)
+[![GitHub release](https://img.shields.io/github/release/rndazurescript/Coco2CustomVision/all.svg)](https://github.com/rndazurescript/Coco2CustomVision/releases)
+
 A simple utility to upload a [COCO dataset](https://cocodataset.org/) format to custom vision and vice versa. This can be used to backup your custom vision object detection projects into a storage account and restore it later or use AzureML to create a more custom CV model.
 
 Currently the scripts work with Object Detection but can be easily updated to work with Classification.
