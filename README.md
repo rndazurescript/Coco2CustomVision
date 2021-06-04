@@ -58,7 +58,9 @@ python -m pytest . -c pytest.ini
 
 or use the [VSCode Test Explorer](https://code.visualstudio.com/docs/python/testing) to even debug your code.
 
-### Invoking the dev code from command line
+### [Optional] Invoking the dev code from command line
+
+If you installed the module in develop mode you can use it directly as seen in the instructions above. You can also use the module reference, as seen bellow. 
 
 To export a custom vision project to an Azure storage account use the following:
 
