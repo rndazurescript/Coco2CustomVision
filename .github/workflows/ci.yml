@@ -1,0 +1,52 @@
+name: Verify code quality and create release
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build
+        pip install -e .[dev]
+    - name: Lint with flake8
+      run: |
+        pip install flake8_formatter_junit_xml
+        flake8 --format junit-xml --output-file junit/flake8_report.xml --exit-zero
+    - name: Test with pytest
+      run: pytest --junitxml=junit/pytest-results.xml
+      env:
+        CUSTOM_VISION_KEY: ${{ secrets.CUSTOM_VISION_KEY }}
+        CUSTOM_VISION_ENDPOINT: ${{ secrets.CUSTOM_VISION_ENDPOINT }}
+        STORAGE_ACCOUNT_KEY: ${{ secrets.STORAGE_ACCOUNT_KEY }}
+        STORAGE_ACCOUNT_NAME: ${{ secrets.STORAGE_ACCOUNT_NAME }}
+        STORAGE_ACCOUNT_CONTAINER_NAME: ${{ secrets.STORAGE_ACCOUNT_CONTAINER_NAME }}
+    - name: Upload pytest test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: testing-results
+        path: junit/*.xml
+      # Use always() to always run this step to publish test results when there are test failures
+      if: ${{ always() }}
+    - name: Build package
+      run: python -m build
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      # Gated pushes to git tags
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: ./dist/*
+        fail_on_unmatched_files: true
+        draft: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
