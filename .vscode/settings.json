@@ -13,9 +13,12 @@
         "bbox",
         "customvision",
         "iscrowd",
+        "junitxml",
+        "mkdir",
         "msrest",
         "pytest",
         "setuptools",
+        "softprops",
         "supercategory",
         "testpypi",
         "tqdm"

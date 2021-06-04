@@ -21,6 +21,7 @@ jobs:
         pip install -e .[dev]
     - name: Lint with flake8
       run: |
+        mkdir -p junit
         pip install flake8_formatter_junit_xml
         flake8 --format junit-xml --output-file junit/flake8_report.xml --exit-zero
     - name: Test with pytest
