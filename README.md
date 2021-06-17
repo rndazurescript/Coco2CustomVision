@@ -159,6 +159,7 @@ Here is a list of related projects and references to this effort:
 - [Azure cognitive services python SDK](https://docs.microsoft.com/samples/azure-samples/cognitive-services-python-sdk-samples/cognitive-services-python-sdk-samples/)
 - [Custom vision SDK](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-customvision/)
 - [Description of the COCO format](https://www.immersivelimit.com/tutorials/create-coco-annotations-from-scratch)
+- [Coco2Yolo](https://github.com/cindyweng/coco-to-yolo-by-category/blob/master/coco-to-yolo-by-category.py)
 
 List of Python related references:
 
