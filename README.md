@@ -120,7 +120,13 @@ You can view existing tags and their comments (`-n`) using:
 git tag -n
 ```
 
-Run a build to create the corresponding version artifacts under the `dist` folder. Then push them to `testpypi` to verify:
+Run a build to create the corresponding version artifacts under the `dist` folder:
+
+```bash
+python -m build
+```
+
+Then push them to `testpypi` to verify:
 
 ```bash
 pip install --upgrade twine
