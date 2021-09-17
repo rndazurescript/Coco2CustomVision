@@ -166,6 +166,12 @@ Here is a list of related projects and references to this effort:
 - [Custom vision SDK](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-customvision/)
 - [Description of the COCO format](https://www.immersivelimit.com/tutorials/create-coco-annotations-from-scratch)
 - [Coco2Yolo](https://github.com/cindyweng/coco-to-yolo-by-category/blob/master/coco-to-yolo-by-category.py)
+- Unofficial tool to download a CVS project in COCO format: https://github.com/shonohs/cvsutils, https://github.com/shonohs/simpledataset
+  ``` bash
+  cvs_download_project <project_id> downloaded/
+  dataset_convert_to downloaded/images.txt coco coco_output/
+  ```
+
 
 List of Python related references:
 
