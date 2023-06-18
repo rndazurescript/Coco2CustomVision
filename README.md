@@ -171,7 +171,7 @@ Here is a list of related projects and references to this effort:
   cvs_download_project <project_id> downloaded/
   dataset_convert_to downloaded/images.txt coco coco_output/
   ```
-
+ - [Custom Vision Autotrainer](https://github.com/microsoft/Custom-Vision-Autotrainer/): Found it after this project was completed. Haven't played with it.
 
 List of Python related references:
 
